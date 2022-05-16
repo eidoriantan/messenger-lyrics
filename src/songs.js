@@ -19,7 +19,7 @@ async function searchSong (text) {
 
   if (response.status === 200) {
     const hits = response.data.response.hits
-    for (let i = 0; i < hits.length && i < 3; i++) {
+    for (let i = 0; i < hits.length && i < 5; i++) {
       const song = hits[i].result
 
       results.push({
