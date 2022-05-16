@@ -1,0 +1,51 @@
+{
+  "name": "lyricsfinder",
+  "version": "1.0.0",
+  "description": "Webhook server for Messenger lyrics",
+  "keywords": [
+    "node",
+    "express",
+    "webhook",
+    "messenger",
+    "bot",
+    "app",
+    "lyrics"
+  ],
+  "private": true,
+  "homepage": "https://lyrics.eidoriantan.tech",
+  "bugs": "https://github.com/eidoriantan/messenger-lyrics/issues",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Adriane Justine Tan",
+    "email": "eidoriantan@gmail.com",
+    "url": "https://eidoriantan.tech"
+  },
+  "contributors": [],
+  "funding": {
+    "type": "patreon",
+    "url": "https://patreon.com/eidoriantan"
+  },
+  "main": "index.js",
+  "directories": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eidoriantan/messenger-lyrics.git"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "lint": "standard",
+    "postlint": "git log -1 --format=%B | commitlint",
+    "pretest": "npm run lint",
+    "test": "echo 'No tests required'"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.17.1",
+    "jsdom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.3",
+    "standard": "^16.0.3"
+  }
+}
