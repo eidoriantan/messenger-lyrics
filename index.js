@@ -75,15 +75,19 @@ async function receivedMessage (event) {
 
   if (message.text) {
     const elements = await searchSong(text)
-    const attachment = {
-      type: 'template',
-      payload: {
-        template_type: 'generic',
-        elements: elements
+    if (typeof elements === 'string') {
+      await send(senderID, elements)
+    } else {
+      const attachment = {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: elements
+        }
       }
-    }
 
-    await send(senderID, attachment, 'attachment')
+      await send(senderID, attachment, 'attachment')
+    }
   }
 }
 

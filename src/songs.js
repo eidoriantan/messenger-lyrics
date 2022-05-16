@@ -19,6 +19,8 @@ async function searchSong (text) {
 
   if (response.status === 200) {
     const hits = response.data.response.hits
+    if (hits.length === 0) return 'No results'
+
     for (let i = 0; i < hits.length && i < 5; i++) {
       const song = hits[i].result
 
