@@ -36,7 +36,7 @@
     "lint": "standard",
     "postlint": "git log -1 --format=%B | commitlint",
     "pretest": "npm run lint",
-    "test": "echo 'No tests required'"
+    "test": "mocha test/index.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
