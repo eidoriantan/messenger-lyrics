@@ -7,6 +7,10 @@ const GENIUS_URL = 'https://genius.com'
 const GENIUS_ENDPOINT = 'https://api.genius.com'
 const GENIUS_ACCESS_TOKEN = process.env.GENIUS_ACCESS_TOKEN
 
+if (!GENIUS_ACCESS_TOKEN) {
+  throw new Error('GENIUS access token is not defined')
+}
+
 async function searchSong (text) {
   const query = querystring.stringify({
     access_token: GENIUS_ACCESS_TOKEN,
