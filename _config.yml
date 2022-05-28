@@ -1,0 +1,21 @@
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+sass:
+  style: compressed
+
+author: Adriane Justine Tan
+email: eidoriantan@gmail.com
+
+tagline: A lyrics finding bot app built for Messenger
+color: "#2b5797"
+
+plugins:
+  - jekyll-github-metadata
+  - jekyll-octicons
+  - jekyll-seo-tag
+  - jekyll-sitemap

@@ -1,0 +1,8 @@
+---
+---
+
+@import url("/assets/css/primer.css");
+
+.Header {
+  background-color: {{ site.color }} !important;
+}
