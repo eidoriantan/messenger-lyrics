@@ -83,12 +83,24 @@ app.post('/webhook', (req, res) => {
   })
 })
 
+async function getHelp (senderID) {
+  const help = 'Simply enter the song\'s title then click "GET LYRICS" on ' +
+    'your selected song to display the lyrics'
+
+  await send(senderID, help)
+}
+
 async function receivedMessage (event) {
   const senderID = event.sender.id
   const message = event.message
   const text = message.text
 
   if (message.text) {
+    if (text === '/help') {
+      await getHelp(senderID)
+      return
+    }
+
     const elements = await searchSong(text)
     if (typeof elements === 'string') {
       await send(senderID, elements)
@@ -111,7 +123,9 @@ async function receivedPostback (event) {
   const postback = event.postback
   const payload = postback.payload
 
-  if (payload.startsWith('LYRICS_')) {
+  if (payload === 'GET_HELP') {
+    await getHelp(senderID)
+  } else if (payload.startsWith('LYRICS_')) {
     const path = payload.split('_')[1]
     const lyrics = await getLyrics(path)
     await send(senderID, lyrics)
