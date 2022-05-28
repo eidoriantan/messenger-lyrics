@@ -14,7 +14,7 @@
   "private": true,
   "homepage": "https://lyrics.eidoriantan.tk",
   "bugs": "https://github.com/eidoriantan/messenger-lyrics/issues",
-  "license": "UNLICENSED",
+  "license": "GPL-3.0-only",
   "author": {
     "name": "Adriane Justine Tan",
     "email": "eidoriantan@gmail.com",
