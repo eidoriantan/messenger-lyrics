@@ -33,8 +33,6 @@ if (!ACCESS_TOKEN || !VALIDATION_TOKEN || !APP_SECRET) {
 
 const app = express()
 
-app.use('/', express.static('public'))
-
 app.use('/webhook', express.json({
   verify: (req, res, buf) => {
     const signature = req.get('x-hub-signature')
