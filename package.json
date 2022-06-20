@@ -41,7 +41,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "express": "^4.17.1",
-    "jsdom": "^19.0.0"
+    "jsdom": "^20.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
