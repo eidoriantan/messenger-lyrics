@@ -12,13 +12,13 @@
     "lyrics"
   ],
   "private": true,
-  "homepage": "https://lyrics.eidoriantan.tk",
+  "homepage": "https://lyrics.eidoriantan.me",
   "bugs": "https://github.com/eidoriantan/messenger-lyrics/issues",
   "license": "GPL-3.0-only",
   "author": {
     "name": "Adriane Justine Tan",
     "email": "eidoriantan@gmail.com",
-    "url": "https://eidoriantan.tk"
+    "url": "https://eidoriantan.me"
   },
   "contributors": [],
   "funding": {
