@@ -19,7 +19,7 @@
 const express = require('express')
 
 const send = require('./src/send')
-const { searchSong, getLyrics } = require('./src/songs')
+const { searchSong, getLyrics, getStats } = require('./src/songs')
 const hash = require('./src/utils/hash')
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN
@@ -129,6 +129,15 @@ async function receivedPostback (event) {
     const path = payload.split('_')[1]
     const lyrics = await getLyrics(path)
     await send(senderID, lyrics)
+  } else if (payload.startsWith('STATS_')) {
+    const id = payload.split('_')[1]
+    const stats = await getStats(id)
+    const statsText = `
+    Contributors: ${stats.contributors}\n
+    Transcribers: ${stats.transcribers}\n
+    Page Views: ${stats.pageviews}
+    `
+    await send(senderID, statsText)
   }
 }
 
