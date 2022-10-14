@@ -105,7 +105,10 @@ async function getStats (id) {
   const url = `${GENIUS_ENDPOINT}/songs/${id}?${query}`
   const response = await axios.get(url)
   const song = response.data.response.song
-  return song.stats
+  const stats = song.stats
+  stats.language = song.language
+
+  return stats
 }
 
 module.exports = { searchSong, getLyrics, getStats }

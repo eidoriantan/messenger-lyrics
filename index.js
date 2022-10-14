@@ -133,6 +133,7 @@ async function receivedPostback (event) {
     const id = payload.split('_')[1]
     const stats = await getStats(id)
     const statsText = `Contributors: ${stats.contributors}\n` +
+      `Language: ${stats.language}\n` +
       `Transcribers: ${stats.transcribers}\n` +
       `Page Views: ${stats.pageviews}`
 
