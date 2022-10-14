@@ -54,6 +54,10 @@ async function searchSong (text) {
           title: 'Get Lyrics',
           payload: `LYRICS_${song.path.slice(1)}`
         }, {
+          type: 'postback',
+          title: 'Get Stats',
+          payload: `STATS_${song.id}`
+        }, {
           type: 'web_url',
           url: song.url,
           title: 'Open on Genius'
@@ -93,4 +97,15 @@ async function getLyrics (path) {
   return lyrics
 }
 
-module.exports = { searchSong, getLyrics }
+async function getStats (id) {
+  const query = querystring.stringify({
+    access_token: GENIUS_ACCESS_TOKEN
+  })
+
+  const url = `${GENIUS_ENDPOINT}/songs/${id}?${query}`
+  const response = await axios.get(url)
+  const song = response.data.response.song
+  return song.stats
+}
+
+module.exports = { searchSong, getLyrics, getStats }
