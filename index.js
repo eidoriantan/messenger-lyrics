@@ -132,11 +132,10 @@ async function receivedPostback (event) {
   } else if (payload.startsWith('STATS_')) {
     const id = payload.split('_')[1]
     const stats = await getStats(id)
-    const statsText = `
-    Contributors: ${stats.contributors}\n
-    Transcribers: ${stats.transcribers}\n
-    Page Views: ${stats.pageviews}
-    `
+    const statsText = `Contributors: ${stats.contributors}\n` +
+      `Transcribers: ${stats.transcribers}\n` +
+      `Page Views: ${stats.pageviews}`
+
     await send(senderID, statsText)
   }
 }
