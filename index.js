@@ -109,7 +109,7 @@ async function receivedMessage (event) {
         type: 'template',
         payload: {
           template_type: 'generic',
-          elements: elements
+          elements
         }
       }
 
