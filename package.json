@@ -48,6 +48,6 @@
     "@commitlint/config-conventional": "^17.6.3",
     "mocha": "^10.2.0",
     "should": "^13.2.3",
-    "standard": "^17.0.0"
+    "standard": "^17.1.0"
   }
 }
