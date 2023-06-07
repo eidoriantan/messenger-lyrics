@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.5",
     "mocha": "^10.2.0",
     "should": "^13.2.3",
     "standard": "^17.1.0"
